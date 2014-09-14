@@ -5,8 +5,6 @@ Let's continue to test our knowledge of Ruby by solving a few puzzles. This time
 Enjoy!
 
 
-#Exercises
-
 ##Super Fizz Buzz Instructions
 Clone the repository, navigate to the project directory and run `rspec spec/fizz_buzz_spec.rb`. If you're using RubyMine, you may have to complete different steps to run the tests. When you run the tests, they should initially fail. Your goal is to make the tests pass by modifying the `run` method in the `lib/fizz_buzz.rb` file. It should accept a number and return the following:
 
