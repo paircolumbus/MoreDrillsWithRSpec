@@ -22,10 +22,10 @@ class DeafGrandma
 
     #Implement your code here <<<<<<<<<
     is_all_downcase = -> (s) {
-      s.each_char.map{|c|c == c.downcase}.inject(true){|i,j| j && i}
+      s == s.downcase
     }
     is_all_upcase = -> (s) {
-      s.each_char.map{|c|c == c.upcase}.inject(true){|i,j| j && i}
+      s == s.upcase
     }
     bye_search = -> (s) {
       s.scan(/BYE/).size
