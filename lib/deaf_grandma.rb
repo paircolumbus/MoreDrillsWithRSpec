@@ -4,8 +4,12 @@
 
 class DeafGrandma
 
+  SPEAK_UP = 'SPEAK UP SONNY!'.freeze
+  HEARD_YOU = 'NOT SINCE 1964!'.freeze
+  GOOD_BYE = 'SEE YOU LATER, SONNY!'.freeze
+
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
   end
 
   def run!
@@ -13,25 +17,37 @@ class DeafGrandma
 
     loop do
       user_input = get_user_input
-      p speak(user_input)
+      exit if user_input == 'q'
+
+      grandmas_response = speak(user_input)
+      p grandmas_response
+      exit if grandmas_response == GOOD_BYE
     end
   end
 
 
   def speak(input)
-
-    #Implement your code here <<<<<<<<<
-
+    copy = input.clone
+    if too_soft?(copy)
+      SPEAK_UP
+    else
+      @bye_counter += 1 if input == 'BYE'
+      @bye_counter == 3 ? GOOD_BYE : HEARD_YOU
+    end
   end
 
   private
 
+  def too_soft?(input)
+    input.upcase!
+  end
+
   def print_welcome
-    puts "\nSpeak to your Grandmother: "
+    puts '\nSpeak to your Grandmother: '
   end
 
   def get_user_input
-    print "> "
+    print '> '
     gets.chomp
   end
 
