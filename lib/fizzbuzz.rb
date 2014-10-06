@@ -2,7 +2,16 @@ class SuperFizzBuzz
 
   def run(input)
 
-    #Implement your code here
+  print "Integer please: "
+    user_num = Integer(gets.chomp)
+
+    if user_num. % 3 == 0
+      puts "Fizz"
+    elsif user_num. % 5 == 0
+      puts "Buzz"
+  #  else user_num. %
+  #    puts "FizzBuzz"
+    end
 
   end
 
