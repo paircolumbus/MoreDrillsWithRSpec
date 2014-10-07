@@ -14,6 +14,7 @@ describe 'SuperFizzBuzz' do
   end
 
   it "returns 'FizzBuzz' when input is divisible by 3 & 5" do
+    expect(script.run(3) && script.run(5)). to eq "FizzBuzz"
     #implement your test here
   end
 end
