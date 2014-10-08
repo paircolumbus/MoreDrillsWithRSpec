@@ -1,6 +1,6 @@
 
 
-#class SuperFizzBuzz
+class SuperFizzBuzz
 
   def run(input)
 
@@ -19,9 +19,7 @@
 
   end
 
-#end
-
-run(15)
+end
 
 #You don't necessarily need to execute this script to complete this challenge, but how would you "run" this method (pun intended) so that it printed a value to the terminal?
 #
