@@ -21,13 +21,17 @@ class DeafGrandma
 
   def speak(input)
 
-    if user_input = "talk"
+    speak = "Hi Grandma"
+    yell = "HI GRANDMA"
+    bye = "Bye"
+
+    if user_input == speak
       puts "Speak up Sonny!"
-    elsif user_input = "yell"
+    elsif user_input == yell
       puts "Not since 1964!"
-    else user_input = @bye_counter == 3
+    else user_input == bye(@bye_counter >= 3)
       puts "See you later Sonny!"
-      #exit
+      exit
     end
 
   end
