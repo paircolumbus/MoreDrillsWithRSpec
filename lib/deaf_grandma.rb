@@ -29,7 +29,7 @@ class DeafGrandma
       puts "Speak up Sonny!"
     elsif user_input == yell
       puts "Not since 1964!"
-    else user_input == bye(@bye_counter >= 3)
+    else user_input == bye(@bye_counter)
       puts "See you later Sonny!"
       exit
     end
