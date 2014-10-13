@@ -18,8 +18,14 @@ class DeafGrandma
     end
   end
 
-
   def speak(user_input)
+
+    if user_input == user_input.upcase
+      p "NOT SINCE 1964!"
+
+    elsif user_input == user_input.downcase
+      p "SPEAK UP SONNY!"
+    end
 
     if user_input == "Bye"
       @bye_counter += 1
@@ -27,16 +33,7 @@ class DeafGrandma
             p "SEE YOU LATER SONNY!"
             exit
         end
-        p @bye_counter
     end
-
-    if user_input == user_input.downcase
-      p "SPEAK UP SONNY!"
-
-    elsif user_input == user_input.upcase
-      p "NOT SINCE 1964!"
-    end
-
 
   end
 
