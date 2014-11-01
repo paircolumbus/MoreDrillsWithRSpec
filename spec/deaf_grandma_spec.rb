@@ -9,10 +9,16 @@ describe 'DeafGrandma' do
   end
   
   it "says 'NOT SINCE 1964!' when we yell" do
-    #implement your test here
+    expect(script.speak("HI GRANDMA")).to eq "NOT SINCE 1964!"
   end
 
-  it "EXTRA CREDIT: How would you test yelling BYE?" do
-    #implement your test here
+  #it "EXTRA CREDIT: How would you test yelling BYE?" do
+  it "exits the program when we yell BYE three times" do
+    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
+    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
+
+    #From http://stackoverflow.com/a/19549370/1133921
+    expect{script.speak("BYE")}.to raise_error(SystemExit)
+
   end
 end
