@@ -20,7 +20,15 @@ class DeafGrandma
 
   def speak(input)
 
-    #Implement your code here <<<<<<<<<
+    @bye_counter += 1 if input == "BYE"
+
+    if @bye_counter >= 3
+      "SEE YOU LATER SONNY!"
+    elsif is_yelling? input
+      "NOT SINCE 1964!"
+    else
+      "SPEAK UP SONNY!"
+    end
 
   end
 
@@ -33,6 +41,12 @@ class DeafGrandma
   def get_user_input
     print "> "
     gets.chomp
+  end
+
+  def is_yelling?(string)
+
+    string == string.upcase
+
   end
 
 end
