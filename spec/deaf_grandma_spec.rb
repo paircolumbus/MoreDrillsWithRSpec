@@ -13,9 +13,7 @@ describe 'DeafGrandma' do
   end
 
   it "EXTRA CREDIT: How would you test yelling BYE?" do
-    #2.times { script.speak("BYE") }
-    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
-    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
+    2.times { script.speak("BYE") }
     expect(script.speak("BYE")).to eq "SEE YOU LATER SONNY!"
   end
 end
