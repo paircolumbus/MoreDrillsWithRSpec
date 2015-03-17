@@ -15,4 +15,8 @@ describe 'SuperFizzBuzz' do
   it "returns 'FizzBuzz' when input is divisible by 3 & 5" do
     expect(script.run(15)).to eq "FizzBuzz"
   end
+  
+  it "returns the input when input is neither divisible by 3, 5, or both" do
+    expect(script.run(2)).to eq 2
+  end
 end

@@ -1,13 +1,18 @@
 class SuperFizzBuzz
 
   def run(input)
-
-    if input % 3 == 0 and input % 5 == 0
+    a = input % 3 == 0
+    b = input % 5 == 0
+    
+    case
+    when (a and b)
       "FizzBuzz"
-    elsif input % 3 == 0
+    when a
       "Fizz"
-    elsif input % 5 == 0
+    when b
       "Buzz"
+    else
+      input
     end
   end
 end
