@@ -1,19 +1,10 @@
 class SuperFizzBuzz
 
   def run(input)
-    a = input % 3 == 0
-    b = input % 5 == 0
-    
-    case
-    when (a and b)
-      "FizzBuzz"
-    when a
-      "Fizz"
-    when b
-      "Buzz"
-    else
-      input
-    end
+    x = ''
+    x += "Fizz" if input%3 == 0
+    x += "Buzz" if input%5 == 0
+    x.empty? ? input : x
   end
 end
 
