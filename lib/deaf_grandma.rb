@@ -21,7 +21,14 @@ class DeafGrandma
   def speak(input)
 
     #Implement your code here <<<<<<<<<
+    @bye_counter += 1  if (input.include? "BYE")
+    return "SEE YOU LATER SONNY!" if ( @bye_counter >= 3 )
 
+    if (input.upcase == input)
+      return "NOT SINCE 1964!"
+    else
+      return "SPEAK UP SONNY!"
+    end
   end
 
   private
