@@ -2,18 +2,18 @@ class SuperFizzBuzz
 
   def run(input)
     #Implement your code here
-		if (input % 3 == 0 && input % 5 == 0)
-			puts "'FizzBuzz'"
-		elsif 
-			input % 3 == 0
-			puts '"Fizz"'
-		elsif
-			input % 5 == 0 
-			puts '"Buzz"'
-		else
-			puts '"Try again!"'
-		end
-	end
+    if (input % 3 == 0 && input % 5 == 0)
+      puts "'FizzBuzz'"
+    elsif 
+      input % 3 == 0
+      puts '"Fizz"'
+    elsif
+      input % 5 == 0 
+      puts '"Buzz"'
+    else
+      puts '"Try again!"'
+    end
+  end
 
 end
 
