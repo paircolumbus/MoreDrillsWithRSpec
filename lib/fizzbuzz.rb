@@ -1,6 +1,7 @@
 class SuperFizzBuzz
 
   def run(input)
+    return "Buzz" if input % 5 == 0
     "Fizz"
   end
 
