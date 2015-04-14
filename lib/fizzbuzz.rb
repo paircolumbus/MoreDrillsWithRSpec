@@ -1,9 +1,7 @@
 class SuperFizzBuzz
 
   def run(input)
-
-    #Implement your code here
-
+    "Fizz"
   end
 
 end
