@@ -19,6 +19,7 @@ class DeafGrandma
 
 
   def speak(input)
+    return "NOT SINCE 1964!" if /[a-z]/.match(input).nil? 
     "SPEAK UP SONNY!"
   end
 
