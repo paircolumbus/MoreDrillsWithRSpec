@@ -8,6 +8,10 @@ describe 'SuperFizzBuzz' do
     expect(script.run(3)).to eq "Fizz"
   end
   
+  it "returns '' when my input is not divisible by 5 or 3" do
+    expect(script.run(1)).to be_empty
+  end
+
   it "returns 'Buzz' when my input is divisible by 5" do
     expect(script.run(5)).to eq "Buzz"
   end
