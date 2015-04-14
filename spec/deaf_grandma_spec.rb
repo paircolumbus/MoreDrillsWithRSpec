@@ -12,9 +12,19 @@ describe 'DeafGrandma' do
     expect(script.speak("YO GRANDMA!")).to eq "NOT SINCE 1964!"
   end
 
-  it "EXTRA CREDIT: How would you test yelling BYE?" do
-    phrases = (1..3).collect { "BYE" }
-    result = phrases.inject(nil){ |r, phrase| script.speak(phrase) } 
-    expect(result).to eq "SEE YOU LATER SONNY!"
+  bye_examples = {
+    'BYE 3 times in a row' => (1..3).collect { "BYE" },
+    'BYE, then speak regularly, and then yell BYE twice' => [
+      "BYE", "It's been fun!", "BYE", "BYE"
+    ],
+    'BYE, then speak Bye, then yell BYE twice more' => [
+      "BYE", "Bye", "BYE", "BYE"
+    ] 
+  }
+  bye_examples.each_pair do |spec, phrases|
+    it "says 'SEE YOU LATER SONNY!' when we yell #{spec}" do
+      result = phrases.inject(nil) { |r, phrase| script.speak(phrase) }
+      expect(result).to eq "SEE YOU LATER SONNY!"
+    end 
   end
 end
