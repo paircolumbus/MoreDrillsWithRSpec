@@ -16,7 +16,10 @@ describe 'SuperFizzBuzz' do
     expect(script.run(5)).to eq "Buzz"
   end
 
-  it "returns 'FizzBuzz' when input is divisible by 3 & 5" do
-    expect(script.run(15)).to eq "FizzBuzz"
+  divisible_by_3_and_5_examples = [ 15, 30, 60, 90]
+  divisible_by_3_and_5_examples.each  do |i|
+    it "returns 'FizzBuzz' when input (#{i}) is divisible by 3 & 5" do
+      expect(script.run(i)).to eq "FizzBuzz"
+    end
   end
 end
