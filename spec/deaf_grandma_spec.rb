@@ -13,6 +13,8 @@ describe 'DeafGrandma' do
   end
 
   it "EXTRA CREDIT: How would you test yelling BYE?" do
-    #implement your test here
+    phrases = (1..3).collect { "BYE" }
+    result = phrases.inject(nil){ |r, phrase| script.speak(phrase) } 
+    expect(result).to eq "SEE YOU LATER SONNY!"
   end
 end
