@@ -26,11 +26,11 @@ class DeafGrandma
       puts "SEE YOU LATER SONNY!"
     end
 
-    # if user_input == user_input.upcase
-      # "NOT SINCE 1964!"
-    # else
-      # "SPEAK UP SONNY!"
-    # end
+    if user_input == user_input.upcase
+      "NOT SINCE 1964!"
+    else
+      "SPEAK UP SONNY!"
+    end
 
   end
 
