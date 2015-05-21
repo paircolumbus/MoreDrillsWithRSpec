@@ -12,7 +12,7 @@ Clone the repository, navigate to the project directory and run `rspec spec/fizz
 - Return "Buzz" if the number is divisible by 5
 - Return "FizzBuzz" if the number is divisible by 3 & 5
 
-I have only wrote tests to check for "Fizz" & "Buzz". This challenge will be complete once you implement the method and tests for "FizzBuzz".
+I have only wrote tests to check for "Fizz". This challenge will be complete once you implement the method and tests for "Buzz" & "FizzBuzz".
 
 ##Deaf Grandma
 Modify the `ask_grandma` method in `lib/deaf_grandma.rb` to return the following:
