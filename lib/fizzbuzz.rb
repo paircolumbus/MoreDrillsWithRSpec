@@ -1,9 +1,13 @@
 class SuperFizzBuzz
 
   def run(input)
+    raise ArgumentError.new("Argument is not an Integer") unless input.instance_of? Fixnum
 
-    #Implement your code here
+    output = String.new
+    match_hash = { 3 => "Fizz", 5 => "Buzz" }
 
+    match_hash.each { | match_int ,word | output += word if input % match_int == 0 }
+    output
   end
 
 end
