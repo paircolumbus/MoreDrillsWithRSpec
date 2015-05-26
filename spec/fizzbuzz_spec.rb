@@ -15,4 +15,8 @@ describe 'SuperFizzBuzz' do
   it "returns 'FizzBuzz' when input is divisible by 3 & 5" do
     #implement your test here
   end
+  
+  it "returns the input number when input isn't divisible by 3, 5, or both" do
+    #implement your test here
+  end
 end
