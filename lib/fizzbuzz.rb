@@ -1,10 +1,11 @@
 class SuperFizzBuzz
 
   def run(input)
-    raise ArgumentError.new("Argument is not an Integer") unless input.instance_of? Fixnum
+    raise ArgumentError.new("Argument is not a Number") unless input.is_a? Numeric
 
     match_hash = { 3 => "Fizz", 5 => "Buzz" }
-    match_hash.reduce("") { |output, set| input % set[0] == 0 ? output + set[1] : output }
+    output = match_hash.reduce("") { |accum, set| input % set[0] == 0 ? accum + set[1] : accum }
+    output.empty? ? nil : output
   end
 
 end
