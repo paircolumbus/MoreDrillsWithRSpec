@@ -19,21 +19,19 @@ class DeafGrandma
 
 
   def speak(input)
+    case input
+      when "BYE"
+        @bye_counter += 1
+      when input.upcase #These returns are not explicit, grandma returns nil if these don't exist
+        return "NOT SINCE 1964!"
+      else
+        return "SPEAK UP SONNY!"
+    end
 
-  
-  case
-    when input == "BYE"
-      @bye_counter += 1
-    when input == input.upcase
-      return "NOT SINCE 1964!"
-    else
-      return "SPEAK UP SONNY!"
-  end
-
-  if @bye_counter == 3
-    return "SEE YOU LATER SONNY!"
-    exit
-  end
+    if @bye_counter == 3
+      "SEE YOU LATER SONNY!"
+      exit
+    end
   end
 
   private
@@ -50,4 +48,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-# DeafGrandma.new.run!
+ DeafGrandma.new.run!
