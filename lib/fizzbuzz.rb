@@ -2,7 +2,13 @@ class SuperFizzBuzz
 
   def run(input)
 
-    #Implement your code here
+    result = ""
+
+    if(input % 3 == 0)
+      result = "Fizz"
+    end
+
+    result
 
   end
 
