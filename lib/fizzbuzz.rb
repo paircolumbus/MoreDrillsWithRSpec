@@ -8,6 +8,10 @@ class SuperFizzBuzz
       result = "Fizz"
     end
 
+    if(input % 5 == 0)
+      result = "Buzz"
+    end
+
     result
 
   end
