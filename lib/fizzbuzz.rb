@@ -12,6 +12,10 @@ class SuperFizzBuzz
       result += "Buzz"
     end
 
+    if(result == "")
+      result = input
+    end
+
     result
 
   end
