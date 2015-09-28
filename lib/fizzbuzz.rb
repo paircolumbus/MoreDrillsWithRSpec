@@ -9,7 +9,7 @@ class SuperFizzBuzz
     end
 
     if(input % 5 == 0)
-      result = "Buzz"
+      result += "Buzz"
     end
 
     result
