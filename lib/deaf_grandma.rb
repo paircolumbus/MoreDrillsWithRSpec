@@ -20,7 +20,13 @@ class DeafGrandma
 
   def speak(input)
 
-      return "SPEAK UP SONNY!"
+    response = "SPEAK UP SONNY!"
+
+    if input.upcase!.nil?
+      response = "NOT SINCE 1964!"
+    end
+
+    response
 
   end
 
