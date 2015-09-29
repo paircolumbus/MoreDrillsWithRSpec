@@ -20,7 +20,7 @@ class DeafGrandma
 
   def speak(input)
 
-    #Implement your code here <<<<<<<<<
+      return "SPEAK UP SONNY!"
 
   end
 
