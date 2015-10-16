@@ -9,10 +9,12 @@ describe 'DeafGrandma' do
   end
   
   it "says 'NOT SINCE 1964!' when we yell" do
-    #implement your test here
+    expect(script.speak("HELLO GRANDMA!")).to eq "NOT SINCE 1964!"
   end
 
   it "EXTRA CREDIT: How would you test yelling BYE?" do
-    #implement your test here
+    grandma = DeafGrandma.new
+    grandma.speak("BYE")
+    expect(grandma.instance_variable_get(:@bye_counter)).to eq 1
   end
 end
