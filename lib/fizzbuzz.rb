@@ -8,6 +8,8 @@ class SuperFizzBuzz
       "Fizz"
     elsif input % 5 == 0
       "Buzz"
+    else
+      input
     end
 
   end
