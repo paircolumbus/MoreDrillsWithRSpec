@@ -15,6 +15,6 @@ describe 'DeafGrandma' do
   it "EXTRA CREDIT: How would you test yelling BYE?" do
     grandma = DeafGrandma.new
     grandma.speak("BYE")
-    expect(grandma.instance_variable_get(:@bye_counter)).to eq 1
+    expect(grandma.bye_counter).to eq 1
   end
 end

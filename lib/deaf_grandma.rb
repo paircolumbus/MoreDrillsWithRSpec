@@ -3,6 +3,7 @@
 #CAREFUL! This script will not exit. Do you know why? You may have to close it with `Ctrl-C` (Mac) if you do not insert an `exit` into your speak method.
 
 class DeafGrandma
+  attr_reader :bye_counter
 
   def initialize
     @bye_counter = 0 
