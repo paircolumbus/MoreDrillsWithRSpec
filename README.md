@@ -20,4 +20,4 @@ Modify the `ask_grandma` method in `lib/deaf_grandma.rb` to return the following
 - If you "YELL" at grandma, she should respond "NOT SINCE 1964!"
 - If you yell "BYE" three times, she eventually responds "SEE YOU LATER SONNY!" and the game ends
 
-You run it's accompanying tests with `rspec spec/deaf_grandma_spec.rb`. The object of this challenge is get everything working and have all tests pass.
+You run its accompanying tests with `rspec spec/deaf_grandma_spec.rb`. The object of this challenge is get everything working and have all tests pass.

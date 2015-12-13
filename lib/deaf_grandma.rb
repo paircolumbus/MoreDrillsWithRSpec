@@ -4,6 +4,8 @@
 
 class DeafGrandma
 
+  attr_writer :bye_counter
+
   def initialize
     @bye_counter = 0 
   end
@@ -11,7 +13,7 @@ class DeafGrandma
   def run!
     print_welcome
 
-    loop do
+    while @bye_counter < 3
       user_input = get_user_input
       p speak(user_input)
     end
@@ -19,8 +21,19 @@ class DeafGrandma
 
 
   def speak(input)
+    if /BYE/ === input
+      @bye_counter += 1
+    else
+      @bye_counter = 0
+    end
 
-    #Implement your code here <<<<<<<<<
+    if @bye_counter >= 3
+      "SEE YOU LATER SONNY!"
+    elsif input == input.upcase
+      "NOT SINCE 1964!"
+    else
+      "SPEAK UP SONNY!"
+    end
 
   end
 
@@ -38,4 +51,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
+# DeafGrandma.new.run!
