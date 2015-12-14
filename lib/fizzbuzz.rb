@@ -1,7 +1,7 @@
 class SuperFizzBuzz
 
   def run(input)
-    'Fizz'
+    input % 3 == 0 ? 'Fizz' : 'Buzz'
   end
 
 end
