@@ -20,6 +20,7 @@ class DeafGrandma
 
   def speak(input)
     return "SPEAK UP SONNY!" unless input == input.upcase
+    "NOT SINCE 1964!"
   end
 
   private
@@ -36,4 +37,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-DeafGrandma.new.run!
+#DeafGrandma.new.run!
