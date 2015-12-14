@@ -10,8 +10,8 @@ class DeafGrandma
 
   def run!
     print_welcome
-
-    loop do
+    user_input = nil
+    until user_input == "BYE"
       user_input = get_user_input
       p speak(user_input)
     end
@@ -19,8 +19,11 @@ class DeafGrandma
 
 
   def speak(input)
-    return "SPEAK UP SONNY!" unless input == input.upcase
-    "NOT SINCE 1964!"
+    case
+    when input == "BYE" then "SURPRISE I'M A ROBOT"
+    when input == input.upcase then "NOT SINCE 1964!" # All caps; user is yelling!
+    else "SPEAK UP SONNY!" # Normal speech
+    end
   end
 
   private
