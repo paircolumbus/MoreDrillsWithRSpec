@@ -4,7 +4,7 @@
 
 class DeafGrandma
 
-  attr_accessor :bye_counter
+  attr_reader :bye_counter
 
   def initialize
     @bye_counter = 0
