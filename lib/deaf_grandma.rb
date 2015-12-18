@@ -4,14 +4,19 @@
 
 class DeafGrandma
 
+  attr_accessor :bye_counter
+
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
   end
 
   def run!
     print_welcome
 
     loop do
+      if @bye_counter == 3
+        exit
+      end
       user_input = get_user_input
       p speak(user_input)
     end
@@ -19,8 +24,19 @@ class DeafGrandma
 
 
   def speak(input)
+    if input.upcase == input && input == 'BYE'
+      @bye_counter = @bye_counter + 1
+      if @bye_counter == 3
+        return 'SEE YOU LATER SONNY!'
+      end
+    end
 
-    #Implement your code here <<<<<<<<<
+    if input.upcase == input
+      return 'NOT SINCE 1964!'
+    else
+      return 'SPEAK UP SONNY!'
+    end
+
 
   end
 
