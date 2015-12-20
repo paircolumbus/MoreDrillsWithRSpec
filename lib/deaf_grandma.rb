@@ -5,7 +5,8 @@
 class DeafGrandma
 
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
+  
   end
 
   def run!
@@ -19,10 +20,19 @@ class DeafGrandma
 
 
   def speak(input)
-
-    #Implement your code here <<<<<<<<<
-
+     
+     if input != input.upcase
+          "SPEAK UP SONNY!"
+    elsif input == "BYE"
+            @bye_counter = @bye_counter += 1
+                if @bye_counter == 3
+                     "SEE YOU LATER SONNY!"
+                exit
+                end
+    else
+        "NOT SINCE 1964!"
   end
+    end
 
   private
 
