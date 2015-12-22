@@ -24,7 +24,7 @@ class DeafGrandma
      if input != input.upcase
           "SPEAK UP SONNY!"
     elsif input == "BYE"
-            @bye_counter = @bye_counter += 1
+             @bye_counter += 1
                 if @bye_counter == 3
                      "SEE YOU LATER SONNY!"
                 exit
@@ -48,4 +48,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
+DeafGrandma.new.run!
