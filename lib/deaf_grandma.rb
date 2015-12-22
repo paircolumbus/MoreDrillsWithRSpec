@@ -14,7 +14,7 @@ class DeafGrandma
     print_welcome
 
     loop do
-      if @bye_counter == 3
+      if should_finish?
         exit
       end
       user_input = get_user_input
@@ -24,11 +24,9 @@ class DeafGrandma
 
 
   def speak(input)
-    if input.upcase == input && input == 'BYE'
+    if input == 'BYE'
       @bye_counter = @bye_counter + 1
-      if @bye_counter == 3
-        return 'SEE YOU LATER SONNY!'
-      end
+      return 'SEE YOU LATER SONNY!' if should_finish?
     end
 
     if input.upcase == input
@@ -41,6 +39,10 @@ class DeafGrandma
   end
 
   private
+
+  def should_finish?
+    @bye_counter >= 3
+  end
 
   def print_welcome
     puts "\nSpeak to your Grandmother: "
