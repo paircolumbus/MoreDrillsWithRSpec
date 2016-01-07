@@ -3,9 +3,9 @@
 #CAREFUL! This script will not exit. Do you know why? You may have to close it with `Ctrl-C` (Mac) if you do not insert an `exit` into your speak method.
 
 class DeafGrandma
-
+	attr_reader :bye_counter
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
   end
 
   def run!
@@ -22,7 +22,28 @@ class DeafGrandma
 
     #Implement your code here <<<<<<<<<
 
-  end
+		yell = true
+
+		input.split(//).each do |char|
+			if char != char.capitalize then
+				yell = false
+			end
+		end
+
+		if (input.eql? "BYE")
+			@bye_counter += 1
+			if (@bye_counter >= 3)
+				puts "SEE YOU LATER SONNY!"
+				exit
+			end
+		end
+
+		if (yell)
+			return "NOT SINCE 1964!"
+		else
+			return "SPEAK UP SONNY!"
+  	end
+	end
 
   private
 
