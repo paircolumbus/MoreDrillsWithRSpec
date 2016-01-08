@@ -21,7 +21,17 @@ class DeafGrandma
   def speak(input)
 
     #Implement your code here <<<<<<<<<
-
+    if input != input.upcase
+      "SPEAK UP SONNY!"
+    elsif input == input.upcase && input != "BYE"
+      "NOT SINCE 1964!"
+    elsif input == "BYE"
+      @bye_counter += 1
+      if @bye_counter == 3
+        p "SEE YOU LATER SONNY"
+        exit
+      end
+    end
   end
 
   private
