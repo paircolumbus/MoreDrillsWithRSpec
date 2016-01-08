@@ -5,7 +5,8 @@
 class DeafGrandma
 
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
+    @commandsSoFar = []
   end
 
   def run!
@@ -19,9 +20,23 @@ class DeafGrandma
 
 
   def speak(input)
-
-    #Implement your code here <<<<<<<<<
-
+    @commandsSoFar.push(input)
+    if (input == "BYE")
+      @bye_counter += 1
+      @commandsSoFar.each do |line|
+        if (@bye_counter > 2)
+          puts "SEE YOU LATER SONNY!"
+          exit
+        end
+      end
+      grandmaSays =  "NOT SINCE 1964!"
+    else
+      if input == input.upcase
+        grandmaSays =  "NOT SINCE 1964!"
+      else
+        grandmaSays = "SPEAK UP SONNY!"
+      end
+    end
   end
 
   private
