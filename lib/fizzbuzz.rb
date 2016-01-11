@@ -1,16 +1,15 @@
 class SuperFizzBuzz
 
   def run(input)
-
     #Implement your code here
     if input%3 ==0 && input%5 == 0
       "FizzBuzz"
     elsif input % 3 == 0
       "Fizz"
     elsif input % 5 == 0
-        "Buzz"
+      "Buzz"
     else
-        input
+      input
     end
   end
 end
