@@ -26,13 +26,13 @@ class DeafGrandma
         @bye_counter  += 1
         #print @bye_counter
         if @bye_counter == 3
-          print "SEE YOU LATER SONNY!"
+          "SEE YOU LATER SONNY!"
           exit
         end
       end
-      return "NOT SINCE 1964!"
+       "NOT SINCE 1964!"
     else
-        return "SPEAK UP SONNY!"
+        "SPEAK UP SONNY!"
     end
   end
 
