@@ -14,18 +14,21 @@ class DeafGrandma
     loop do
       user_input = get_user_input
       p speak(user_input)
+      break if ending_conversation
     end
   end
 
 
   def speak(input)
-
-    #Implement your code here <<<<<<<<<
-
+    if input == input.upcase
+      @bye_counter += 1 if input == "BYE"
+      ending_conversation ? "SEE YOU LATER SONNY!" : "NOT SINCE 1964!"
+    else
+      "SPEAK UP SONNY!"
+    end
   end
 
   private
-
   def print_welcome
     puts "\nSpeak to your Grandmother: "
   end
@@ -33,6 +36,11 @@ class DeafGrandma
   def get_user_input
     print "> "
     gets.chomp
+  end
+
+  private
+  def ending_conversation
+    @bye_counter >= 3
   end
 
 end
