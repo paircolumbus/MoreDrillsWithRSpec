@@ -42,10 +42,10 @@ class DeafGrandma
 
   def get_user_input
     print "> "
-    gets.chomp
+    gets.chomp!
   end
 
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-DeafGrandma.new.run!
+#DeafGrandma.new.run!
