@@ -13,9 +13,14 @@ describe 'DeafGrandma' do
   end
 
   it "EXTRA CREDIT: How would you test yelling BYE?" do
-    if @bye_counter = 3
+    if @bye_counter == 3
       expect(script.speak("BYE")).to eq "SEE YOU LATER SONNY!"
     end
   end
+
+  it "makes sure you are actually speaking" do
+    expect(script.speak("")).to eq "SPEAK UP SONNY!"
+  end
+   
 end
 
