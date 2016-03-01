@@ -19,9 +19,16 @@ class DeafGrandma
 
 
   def speak(input)
-
-    #Implement your code here <<<<<<<<<
-
+    if input == "BYE" && @bye_counter >= 2
+      "SEE YOU LATER SONNY!"
+    elsif input == "BYE" && @bye_counter < 2
+      @bye_counter+=1
+      "NOT SINCE 1964!"
+    elsif input == input.upcase
+      "NOT SINCE 1964!"
+    else
+      "SPEAK UP SONNY!"
+    end
   end
 
   private
@@ -38,4 +45,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
+# DeafGrandma.new.run!
