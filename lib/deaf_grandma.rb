@@ -32,9 +32,9 @@ class DeafGrandma
         "DON'T LEAVE ME"
       end
     elsif input == input.upcase
-        "NOT SINCE 1964"
+        "NOT SINCE 1964!"
     else
-       "SPEAK UP SONNY"
+       "SPEAK UP SONNY!"
     end
   end
 
@@ -52,4 +52,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-DeafGrandma.new.run!
+#DeafGrandma.new.run!
