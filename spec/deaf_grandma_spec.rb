@@ -17,7 +17,6 @@ describe 'DeafGrandma' do
     #implement your test here
     expect(script.speak("BYE")).to eq "DON'T LEAVE ME"
     expect(script.speak("BYE")).to eq "DON'T LEAVE ME"
-    expect(script.speak("BYE")).to eq "DON'T LEAVE ME"
-    expect(script.speak("BYE")).to eq "SEE YOU LATER SONNY!"
+    expect(script.speak("BYE")).to eq "SEE YOU LATER SONNY"
   end
 end
