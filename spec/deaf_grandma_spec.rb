@@ -7,7 +7,7 @@ describe 'DeafGrandma' do
   it "says 'SPEAK UP SONNY!' when we speak regularly" do
     expect(script.speak("Hi Grandma")).to eq [true, "SPEAK UP SONNY!"]
   end
-
+  
   it "says 'NOT SINCE 1964!' when we yell" do
     expect(script.speak("HEY")).to eq [true, "NOT SINCE 1964!"]
   end
