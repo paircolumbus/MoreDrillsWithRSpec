@@ -27,7 +27,7 @@ class DeafGrandma
       return false, "SEE YOU LATER SONNY!"
     end
 
-    if input.to_s.upcase == input
+    if input.upcase == input
       return true, "NOT SINCE 1964!"
     else
       return true, "SPEAK UP SONNY!"
