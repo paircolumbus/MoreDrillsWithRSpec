@@ -3,9 +3,11 @@
 #CAREFUL! This script will not exit. Do you know why? You may have to close it with `Ctrl-C` (Mac) if you do not insert an `exit` into your speak method.
 
 class DeafGrandma
+  attr_reader :SpeakResult
 
   def initialize
     @bye_counter = 0 
+    @SpeakResult = Struct.new(:done, :reply)
   end
 
   def run!
@@ -13,9 +15,9 @@ class DeafGrandma
 
     loop do
       user_input = get_user_input
-      keeprunning, response = speak(user_input)
-      p response
-      exit if not keeprunning
+      result = speak(user_input)
+      p result.reply
+      exit if result.done
     end
   end
 
@@ -24,13 +26,13 @@ class DeafGrandma
     @bye_counter += 1 if input == "BYE"
 
     if @bye_counter == 3
-      return false, "SEE YOU LATER SONNY!"
+      return @SpeakResult.new(true, "SEE YOU LATER SONNY!")
     end
 
     if input.upcase == input
-      return true, "NOT SINCE 1964!"
+      return @SpeakResult.new(false, "NOT SINCE 1964!")
     else
-      return true, "SPEAK UP SONNY!"
+      return @SpeakResult.new(false, "SPEAK UP SONNY!")
     end
   end
 
