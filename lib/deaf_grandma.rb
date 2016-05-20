@@ -3,6 +3,7 @@
 #CAREFUL! This script will not exit. Do you know why? You may have to close it with `Ctrl-C` (Mac) if you do not insert an `exit` into your speak method.
 
 class DeafGrandma
+  attr_reader :bye_counter
 
   def initialize
     @bye_counter = 0 
@@ -14,6 +15,7 @@ class DeafGrandma
     loop do
       user_input = get_user_input
       p speak(user_input)
+      break if @bye_counter == 3
     end
   end
 
@@ -21,7 +23,13 @@ class DeafGrandma
   def speak(input)
 
     #Implement your code here <<<<<<<<<
-
+    if input == "BYE"
+      @bye_counter += 1
+    elsif input == input.upcase
+      "NOT SINCE 1964!"
+    else
+      "SPEAK UP SONNY!"
+    end
   end
 
   private
