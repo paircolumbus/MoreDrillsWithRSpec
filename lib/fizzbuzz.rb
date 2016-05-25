@@ -1,19 +1,15 @@
 class SuperFizzBuzz
 
   def run(input)
-    #Implement your code here
-    if(input.is_a? Integer)
-      if input%3==0 && input%5==0
-        "FizzBuzz"
-      elsif input%3==0
-        "Fizz"
-      elsif input%5==0
-        "Buzz"
-      else
-        input
-      end
+    return "Input isn't an integer" unless input.is_a? Integer
+    if input % 3 == 0 && input % 5 == 0
+      "FizzBuzz"
+    elsif input % 3 == 0
+      "Fizz"
+    elsif input % 5 == 0
+      "Buzz"
     else
-      puts "Expecting an Integer. You provided #{input}."
+      input
     end
   end
 
