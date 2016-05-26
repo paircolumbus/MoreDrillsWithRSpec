@@ -5,7 +5,7 @@
 class DeafGrandma
 
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
   end
 
   def run!
@@ -13,16 +13,33 @@ class DeafGrandma
 
     loop do
       user_input = get_user_input
-      p speak(user_input)
+      p (output = speak(user_input))
+      if output == "SEE YOU LATER SONNY!"
+        break
+      end
     end
   end
 
 
   def speak(input)
 
-    #Implement your code here <<<<<<<<<
+    if input == "BYE"
+      @bye_counter += 1
+      if @bye_counter >= 3
+        return "SEE YOU LATER SONNY!"
+      end
+    end
+
+    input.split("").each do |c|
+      if c >= "a" && c <= "z"
+        return "SPEAK UP SONNY!"
+      end
+    end
+    return "NOT SINCE 1964!"
 
   end
+
+
 
   private
 
