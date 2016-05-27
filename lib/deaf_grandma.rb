@@ -22,6 +22,7 @@ class DeafGrandma
     if(input == input.upcase)
       if(input == "BYE BYE BYE")
         "SEE YOU LATER SONNY!"
+        exit(0)
       else
         "NOT SINCE 1964!"
       end
