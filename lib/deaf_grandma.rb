@@ -19,8 +19,15 @@ class DeafGrandma
 
 
   def speak(input)
-
-    #Implement your code here <<<<<<<<<
+    
+    case
+      when input =~ /[a-z]/
+        "SPEAK UP SONNY!"
+      when input =~ /^[A-Z\s?!]+$/
+        "NOT SINCE 1964!"
+      else
+        "I DON'T UNDERSTAND!"
+    end
 
   end
 
