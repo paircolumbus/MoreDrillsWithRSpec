@@ -5,7 +5,7 @@
 class DeafGrandma
 
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
   end
 
   def run!
