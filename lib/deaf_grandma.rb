@@ -5,6 +5,10 @@
 class DeafGrandma
 
   def initialize
+    @farewell = "SEE YOU LATER SONNY!"
+    @heard_response = "NOT SINCE 1964!"
+    @not_heard_response = "SPEAK UP SONNY!"
+    @bye_limit = 3
     @bye_counter = 0
   end
 
@@ -19,12 +23,34 @@ class DeafGrandma
 
 
   def speak(input)
+    if bye? input then
+      @bye_counter += 1
+    end
 
-    #Implement your code here <<<<<<<<<
+    if @bye_counter >= @bye_limit then
+      return @farewell
+    end
 
+    if can_hear? input then
+      return @heard_response
+    else
+      return @not_heard_response
+    end
   end
 
   private
+
+  def bye?(said)
+    said == "BYE"
+  end
+
+  def can_hear?(said)
+    said.chars.all? { |character| upcase? character }
+  end
+
+  def upcase?(char)
+    char == char.upcase
+  end
 
   def print_welcome
     puts "\nSpeak to your Grandmother: "
