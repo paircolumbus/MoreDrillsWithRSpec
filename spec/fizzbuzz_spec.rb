@@ -4,8 +4,11 @@ require 'fizzbuzz'
 describe 'SuperFizzBuzz' do
   let(:script) { SuperFizzBuzz.new }
 
-  it "returns 'Fizz' when my input is divisible by 3" do
-    expect(script.run(3)).to eq "Fizz"
+  # Setup multiple test cases for testing against Fizz
+  [3, 6].each do |number|
+    it "returns 'Fizz' when input is divisible by 3" do
+      expect(script.run(number)).to eq "Fizz"
+    end
   end
   
   it "returns 'Buzz' when my input is divisible by 5" do
