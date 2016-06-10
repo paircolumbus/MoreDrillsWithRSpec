@@ -1,9 +1,34 @@
 class SuperFizzBuzz
 
   def run(input)
+    save_fizz = self.fizz? input
+    save_buzz = self.buzz? input
 
-    #Implement your code here
+    if !save_fizz && !save_buzz then
+      return input
+    end
 
+    output = ""
+
+    if save_fizz then
+      output += "Fizz"
+    end
+
+    if save_buzz then
+      output += "Buzz"
+    end
+
+    return output
+  end
+
+  def fizz?(input)
+    fizz_value = 3
+    return (input % fizz_value) == 0
+  end
+
+  def buzz?(input)
+    buzz_value = 5
+    return (input % buzz_value) == 0
   end
 
 end
