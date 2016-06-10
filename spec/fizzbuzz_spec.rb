@@ -11,15 +11,21 @@ describe 'SuperFizzBuzz' do
     end
   end
   
-  it "returns 'Buzz' when my input is divisible by 5" do
-    #implement your test here
+  [5, 10].each do |number|
+    it "returns 'Buzz' when my input is divisible by 5" do
+      expect(script.run(number)).to eq "Buzz"
+    end
   end
 
-  it "returns 'FizzBuzz' when input is divisible by 3 & 5" do
-    #implement your test here
+  [15, 30].each do |number|
+    it "returns 'FizzBuzz' when input is divisible by 3 & 5" do
+      expect(script.run(number)).to eq "FizzBuzz"
+    end
   end
   
-  it "returns the input number when input isn't divisible by 3, 5, or both" do
-    #implement your test here
+  [2, 8, 14].each do |number|
+    it "returns the input number when input isn't divisible by 3, 5, or both" do
+      expect(script.run(number)).to eq number
+    end
   end
 end
