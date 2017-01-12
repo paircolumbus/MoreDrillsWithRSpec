@@ -19,9 +19,18 @@ class DeafGrandma
 
 
   def speak(input)
-
-    #Implement your code here <<<<<<<<<
-
+    if input == "BYE"
+      if bye_counter == 2
+        print "SEE YOU LATER SONNY!"
+        exit
+      end
+      bye_counter += 1
+    end
+    if input.upcase == input
+      print "NOT SINCE 1964!"
+    else
+      print "SPEAK UP SONNY!"
+    end
   end
 
   private

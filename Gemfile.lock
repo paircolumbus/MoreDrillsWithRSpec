@@ -20,3 +20,9 @@ PLATFORMS
 
 DEPENDENCIES
   rspec (~> 3.0.0.beta2)
+
+RUBY VERSION
+   ruby 2.0.0p648
+
+BUNDLED WITH
+   1.13.7
