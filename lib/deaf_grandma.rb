@@ -17,10 +17,21 @@ class DeafGrandma
     end
   end
 
+  def add_to_count
+    @bye_counter += 1
+  end
+  
+  def count_complete?
+    @bye_counter == 3
+  end
 
   def speak(input)
-    if input.split.count { |i| i.include? "BYE" } == 3
-      "SEE YOU LATER SONNY!"
+    if input.include? "BYE"
+      add_to_count
+      
+      if count_complete?
+        "SEE YOU LATER SONNY!"
+      end
     elsif input == input.upcase
       "NOT SINCE 1964!"
     else
