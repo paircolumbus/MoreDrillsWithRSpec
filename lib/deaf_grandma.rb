@@ -10,19 +10,23 @@ class DeafGrandma
 
   def run!
     print_welcome
-
+  
     loop do
       user_input = get_user_input
       p speak(user_input)
     end
   end
 
-
-  def speak(input)
-
-    #Implement your code here <<<<<<<<<
-
+ def speak(input)
+  #BYE condition. Ends program after condition
+  @bye_counter += 1 if input == "BYE"
+  abort ("SEE YOU LATER SONNY!") if @bye_counter >= 3
+  #Uppercase condition.
+  return "NOT SINCE 1964!" if input == input.upcase 
+  #All other input.
+  return "SPEAK UP SONNY!"
   end
+ 
 
   private
 
@@ -30,12 +34,14 @@ class DeafGrandma
     puts "\nSpeak to your Grandmother: "
   end
 
+
   def get_user_input
     print "> "
     gets.chomp
+    end
   end
 
-end
+
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
+DeafGrandma.new.run!
