@@ -21,7 +21,7 @@ class DeafGrandma
     # Checks regex POSIX match for uppercase characters
     if input =~ /^([[:upper:]]|\s)+!?$/
       @bye_counter += 1 if input =~ /^BYE!?$/
-      return @bye_counter == 3 ? 'BYE!' : 'NOT SINCE 1964!'
+      return @bye_counter == 3 ? 'SEE YOU LATER SONNY!' : 'NOT SINCE 1964!'
     end
     'SPEAK UP SONNY!'
   end
