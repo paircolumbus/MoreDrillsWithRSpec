@@ -20,7 +20,7 @@ class DeafGrandma
   def speak(input)
     # Checks regex POSIX match for uppercase characters
     if input =~ /^([[:upper:]]|\s)+!?$/
-      @bye_counter += 1 if input =~ /^BYE$!?/
+      @bye_counter += 1 if input =~ /^BYE!?$/
       return @bye_counter == 3 ? 'BYE!' : 'NOT SINCE 1964!'
     end
     'SPEAK UP SONNY!'
