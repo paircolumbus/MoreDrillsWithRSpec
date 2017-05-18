@@ -4,7 +4,7 @@ class SuperFizzBuzz
     return 'FizzBuzz' if input % 3 == 0 and input % 5 == 0
     return 'Fizz' if input % 3 == 0
     return 'Buzz' if input % 5 == 0
-    return input
+    input
   end
 
 end
