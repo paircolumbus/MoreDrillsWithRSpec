@@ -1,13 +1,16 @@
 class SuperFizzBuzz
 
   def run(input)
+    result = ''
 
-    #Implement your code here
+    result += 'Fizz' if input % 3 == 0
+    result += 'Buzz' if input % 5 == 0
+    result  = input  if result.length == 0
 
+    result
   end
-
 end
 
 #You don't necessarily need to execute this script to complete this challenge, but how would you "run" this method (pun intended) so that it printed a value to the terminal?
-#
+# puts SuperFizzBuzz.new.run(7)
 #HINT: it's an instance method.
