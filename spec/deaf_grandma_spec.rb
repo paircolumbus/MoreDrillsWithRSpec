@@ -12,24 +12,24 @@ describe 'DeafGrandma' do
     expect(script.speak("HI GRANDMA")).to eq "NOT SINCE 1964!"
   end
 
-  it "EXTRA CREDIT: How would you test yelling BYE?" do
-    2.times { script.speak("BYE") }
+  context 'when already yelling BYE twice' do
+    before(:each) { 2.times { script.speak "BYE" } }
 
-    expect(script.speak("BYE")).to eq "SEE YOU LATER SONNY!"
+    it "EXTRA CREDIT: How would you test yelling BYE?" do
+      expect(script.speak("BYE")).to eq "SEE YOU LATER SONNY!"
+    end
+
+    it "resets after saying SEE YOU LATER SONNY" do
+      script.speak("BYE")
+      expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
+    end
   end
 
-  it "resets after saying SEE YOU LATER SONNY" do
-    2.times { script.speak("BYE") }
-    expect(script.speak("BYE")).to eq "SEE YOU LATER SONNY!"
-    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
-  end
 
   it "resets the bye counter after not yelling" do
     script.speak("BYE")
     script.speak("hi")
-    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
     script.speak("BYE")
-    expect(script.speak("BYE")).to eq "SEE YOU LATER SONNY!"
+    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
   end
-
 end
