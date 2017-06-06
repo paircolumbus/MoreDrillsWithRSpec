@@ -14,10 +14,10 @@ end
 describe 'SuperFizzBuzz' do
   let(:script) { SuperFizzBuzz.new }
 
-  [ 3, -132, 213].each &expect_specific("Fizz")
+  [ 3, -132, 212].each &expect_specific("Fizz")
   [ 5, -475, 835].each &expect_specific("Buzz")
   [15, -135, 135].each &expect_specific("FizzBuzz")
-  
+
   it "returns the input number when input isn't divisible by 3, 5, or both" do
     expect(script.run(7)).to eq 7
   end
