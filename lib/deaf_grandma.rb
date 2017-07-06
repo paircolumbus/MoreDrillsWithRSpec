@@ -1,7 +1,4 @@
-#This script is different than FizzBuzz. It should accept user input from the terminal if done correctly. Run it to see what it does then complete the speak method so that it returns & prints the correct thing.
-
-#CAREFUL! This script will not exit. Do you know why? You may have to close it with `Ctrl-C` (Mac) if you do not insert an `exit` into your speak method.
-
+# Solution to rspec file
 class DeafGrandma
 
   def initialize
@@ -19,9 +16,17 @@ class DeafGrandma
 
 
   def speak(input)
+    "SPEAK UP SONNY!"
+  end
 
-    #Implement your code here <<<<<<<<<
-
+  def YELL(input)
+    @bye_counter += 1 if input.casecmp('bye').zero?
+    if @bye_counter <= 2
+      "NOT SINCE 1964!"
+    else
+      @bye_counter = 0
+      "SEE YOU LATER SONNY!"
+    end  
   end
 
   private
@@ -36,6 +41,3 @@ class DeafGrandma
   end
 
 end
-
-#Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
