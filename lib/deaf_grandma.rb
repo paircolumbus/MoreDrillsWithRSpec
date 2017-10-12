@@ -22,6 +22,8 @@ class DeafGrandma
 
    if input != input.upcase
     return "SPEAK UP SONNY!"
+   else
+    return "NOT SINCE 1964!"
    end
 
   end
