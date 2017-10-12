@@ -9,7 +9,7 @@ class SuperFizzBuzz
       str << 'Buzz'
     end
     
-    return str
+    str == '' ? input : str
   end
 
 end
