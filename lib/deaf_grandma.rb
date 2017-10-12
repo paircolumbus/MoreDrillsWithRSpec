@@ -20,13 +20,24 @@ class DeafGrandma
 
   def speak(input)
 
-   if input != input.upcase
-    return "SPEAK UP SONNY!"
-   else
-    return "NOT SINCE 1964!"
-   end
+    if input === "BYE"
+      @bye_counter = @bye_counter + 1;
+    else
+      @bye_counter = 0
+    end
 
-  end
+    if @bye_counter >= 3
+      puts "SEE YOU LATER SONNY!"
+      exit
+    end
+
+    if input == "" || input != input.upcase
+      return "SPEAK UP SONNY!"
+    end
+    
+    return "NOT SINCE 1964!"
+    
+  end  
 
   private
 
@@ -42,4 +53,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
+# DeafGrandma.new.run!
