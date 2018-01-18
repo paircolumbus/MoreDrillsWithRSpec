@@ -14,14 +14,29 @@ class DeafGrandma
     loop do
       user_input = get_user_input
       p speak(user_input)
+      exit if @bye_counter == 3
     end
   end
 
 
   def speak(input)
+    if input.match(/\p{Lower}/)
+      @bye_counter = 0
+      soft
+    else
+      if input == "BYE"
+        @bye_counter += 1
 
-    #Implement your code here <<<<<<<<<
-
+        if @bye_counter == 3
+          see_you_later
+        else
+          yell
+        end
+      else
+        @bye_counter = 0
+        yell
+      end
+    end
   end
 
   private
@@ -33,6 +48,18 @@ class DeafGrandma
   def get_user_input
     print "> "
     gets.chomp
+  end
+
+  def soft
+    "SPEAK UP SONNY!"
+  end
+
+  def see_you_later
+    "SEE YOU LATER SONNY!"
+  end
+
+  def yell
+    "NOT SINCE 1964!"
   end
 
 end

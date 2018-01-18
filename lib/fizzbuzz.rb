@@ -3,7 +3,6 @@ class SuperFizzBuzz
   def run(input)
 
     output = ""
-
     output << "Fizz" if input % 3 == 0
     output << "Buzz" if input % 5 == 0
 
