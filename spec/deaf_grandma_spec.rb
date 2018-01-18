@@ -13,6 +13,8 @@ describe 'DeafGrandma' do
   end
 
   it "EXTRA CREDIT: How would you test yelling BYE?" do
-    #implement your test here
+    script.speak("BYE")
+    script.speak("BYE")
+    expect(script.speak("BYE")).to eq "SEE YOU LATER SONNY!"
   end
 end
