@@ -19,7 +19,9 @@ class DeafGrandma
 
 
   def speak(input)
-    "SPEAK UP SONNY!" if input != input.upcase
+    result = "SPEAK UP SONNY!" if input != input.upcase
+    result = "NOT SINCE 1964!" if input == input.upcase
+    result
   end
 
   private
