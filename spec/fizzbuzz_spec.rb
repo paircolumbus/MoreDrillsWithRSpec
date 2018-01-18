@@ -17,6 +17,6 @@ describe 'SuperFizzBuzz' do
   end
   
   it "returns the input number when input isn't divisible by 3, 5, or both" do
-    #implement your test here
+    expect(script.run(2)).to eq 2
   end
 end
