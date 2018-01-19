@@ -14,13 +14,21 @@ class DeafGrandma
     loop do
       user_input = get_user_input
       p speak(user_input)
+      break if @bye_counter == 3
     end
   end
 
 
   def speak(input)
 
-    #Implement your code here <<<<<<<<<
+    if input == "BYE"
+      @bye_counter += 1
+      "SEE YOU LATER SONNY!" if @bye_counter == 3
+    elsif input == input.upcase
+      "NOT SINCE 1964!"
+    else
+      "SPEAK UP SONNY!"
+    end
 
   end
 
