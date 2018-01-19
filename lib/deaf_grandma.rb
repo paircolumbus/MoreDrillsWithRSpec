@@ -20,22 +20,19 @@ class DeafGrandma
 
 
   def speak(input)
-    if input.match(/\p{Lower}/)
-      @bye_counter = 0
-      soft
-    else
+    if input == input.upcase
+      
       if input == "BYE"
         @bye_counter += 1
-
-        if @bye_counter == 3
-          see_you_later
-        else
-          yell
-        end
       else
         @bye_counter = 0
-        yell
       end
+
+      @bye_counter == 3 ? byes_response : yell_response
+
+    else
+      @bye_counter = 0
+      soft_speech_response
     end
   end
 
@@ -50,15 +47,15 @@ class DeafGrandma
     gets.chomp
   end
 
-  def soft
+  def soft_speech_response
     "SPEAK UP SONNY!"
   end
 
-  def see_you_later
+  def byes_response
     "SEE YOU LATER SONNY!"
   end
 
-  def yell
+  def yell_response
     "NOT SINCE 1964!"
   end
 

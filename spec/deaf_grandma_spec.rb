@@ -19,9 +19,9 @@ describe 'DeafGrandma' do
   end
 
   it "says 'NOT SINCE 1964! when we say 3 'BYE's nonconsecutively" do
-    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
-    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
-    expect(script.speak("I guess I'll stay")).to eq "SPEAK UP SONNY!"
+    script.speak("BYE")
+    script.speak("BYE")
+    script.speak("I guess I'll stay")
     expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
   end
 end
