@@ -6,18 +6,18 @@ class SuperFizzBuzz
     divBy3 = input % 3 == 0
     divBy5 = input % 5 == 0
 
-    if divBy3
+    if div_by_3
       output << "Fizz"
     end
 
-    if divBy5
+    if div_by_5
       output << "Buzz"
     end
 
-    if divBy3 || divBy5
-      return output
+    if div_by_3 || div_by_5
+      output
     else
-      return input
+      input
     end
   end
 end

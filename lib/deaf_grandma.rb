@@ -24,7 +24,7 @@ class DeafGrandma
     if input == input.upcase
       #YELL
       if input == "BYE"
-        @bye_counter = @bye_counter + 1
+        @bye_counter += 1
       else
         @bye_counter = 0
       end
