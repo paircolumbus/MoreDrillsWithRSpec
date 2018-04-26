@@ -19,12 +19,16 @@ class DeafGrandma
 
 
   def speak(input)
-    if input == "BYE!"
+    said_bye = input.start_with?("BYE")
+
+    @bye_counter += 1 if said_bye
+
+    if said_bye && @bye_counter > 2
       "BYE!"
-    elsif input == input.upcase && input.end_with?("!")
-      "NOT SINCE 1964!"
+    elsif input == input.upcase
+        "NOT SINCE 1964!"
     else 
-      "SPEAK UP SONNY!"
+        "SPEAK UP SONNY!"
     end
   end
 
