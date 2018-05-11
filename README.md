@@ -4,7 +4,7 @@ Let's continue to test our knowledge of Ruby by solving a few puzzles. This time
 
 Enjoy!
 
-## How to Run Tests
+## Instructions
 - View the `/spec` folder to see the tests
 - Run `bundle exec rspec` to run the existing tests
 - RED: Try writing out your tests and running them
