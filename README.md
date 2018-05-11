@@ -5,9 +5,11 @@ Let's continue to test our knowledge of Ruby by solving a few puzzles. This time
 Enjoy!
 
 ## How to Run Tests
-- Check the /spec folder to see the tests
-- Try writing out your tests before coming up with a solution
-- Run `bundle exec rspec` to run your tests
+- View the `/spec` folder to see the tests
+- Run `bundle exec rspec` to run the existing tests
+- RED: Try writing out your tests and running them
+- GREEN: Come up with a solution to make your test pass
+- REFACTOR: Clean all your code up and make it elegant and performant
 
 
 ## Super Fizz Buzz Instructions
