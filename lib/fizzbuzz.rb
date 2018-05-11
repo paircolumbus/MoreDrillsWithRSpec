@@ -1,15 +1,13 @@
 class SuperFizzBuzz
 
-  def run(input)
-    result = ""
+  def run(input)  	
+  	result = ""
     if input % 3 == 0
       result += "Fizz"
-      if input % 5 == 0
-        result +=  "Buzz"
-      end
-    elsif input % 5 == 0
+    end
+    if input % 5 == 0
       result +=  "Buzz"
-    else
+    elsif input % 3 != 0
       result = input
     end
     return result

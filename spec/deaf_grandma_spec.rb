@@ -13,5 +13,6 @@ describe 'DeafGrandma' do
   end
 
   it "EXTRA CREDIT: How would you test yelling BYE?" do
+  	expect{ 3.times {script.speak("BYE")} }.to raise_error(SystemExit, "SEE YOU LATER SONNY!")
   end
 end

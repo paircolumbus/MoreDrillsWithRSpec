@@ -1,5 +1,4 @@
 #This script is different than FizzBuzz. It should accept user input from the terminal if done correctly. Run it to see what it does then complete the speak method so that it returns & prints the correct thing.
-
 #CAREFUL! This script will not exit. Do you know why? You may have to close it with `Ctrl-C` (Mac) if you do not insert an `exit` into your speak method.
 
 class DeafGrandma
@@ -20,7 +19,16 @@ class DeafGrandma
 
   def speak(input)
 
-    #Implement your code here <<<<<<<<<
+    if input.upcase != input
+      return "SPEAK UP SONNY!"
+    elsif input == "BYE"
+      @bye_counter += 1
+      if @bye_counter == 3
+        abort("SEE YOU LATER SONNY!")
+      end 
+    elsif input.upcase == input
+      return "NOT SINCE 1964!"      
+    end
 
   end
 
