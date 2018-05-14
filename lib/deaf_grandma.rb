@@ -5,6 +5,7 @@
 #if you do not insert an `exit` into your speak method.
 
 class DeafGrandma
+  attr_accessor :bye_counter
 
   def initialize
     @bye_counter = 0
@@ -14,29 +15,54 @@ class DeafGrandma
     print_welcome
 
     loop do
-      user_input = get_user_input
-      p speak(user_input)
+        user_input = get_user_input
+        process_user_input(user_input)
+      end
+  end
+
+  def process_user_input(input)
+    if input == "BYE"
+      @bye_counter += 1
+      if @bye_counter == 3
+        abort("SEE YOU LATER SONNY!")
+      end
+    else
+      speak(input)
     end
   end
 
   def speak(input)
-    input = input.gsub(/[[:punct:]]/, '')
-    puts (input.scan(/[A-Z]/).length < input.split(' ').join.length) ? "SPEAK UP SONNY!" : "NOT SINCE 1964!"
-    exit
+    @input = input
+    if speak_softly?
+      "SPEAK UP SONNY!"
+    elsif yell?
+      "NOT SINCE 1964!"
+    end
   end
 
   private
+
+  def get_user_input
+    print "> "
+    gets.chomp.gsub(/\s+/, "")
+  end
+
+  def input_scanner
+    @input.scan(/[A-Z]/).length
+  end
 
   def print_welcome
     puts "\nSpeak to your Grandmother: "
   end
 
-  def get_user_input
-    print "> "
-    gets.chomp
+  def speak_softly?
+    input_scanner == 0
   end
 
+  def yell?
+    input_scanner == @input.length
+  end
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-DeafGrandma.new.run!
+#DeafGrandma.new.run!
