@@ -10,7 +10,7 @@ class SuperFizzBuzz
     elsif input % 3 != 0
       result = input
     end
-    return result
+    result
   end
 
 end
