@@ -22,10 +22,7 @@ class DeafGrandma
   def speak(input)
     if input == 'BYE!'
       @bye_counter += 1
-      if @bye_counter >= 3
-        return 'SEE YOU LATER SONNY!'
-        exit 1 # this isn't right
-      end
+      abort('SEE YOU LATER SONNY!') if @bye_counter >= 3
     end
     return 'NOT SINCE 1964!' if input.upcase == input
     'SPEAK UP SONNY!'
