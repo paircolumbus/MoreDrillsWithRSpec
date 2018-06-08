@@ -19,9 +19,17 @@ class DeafGrandma
 
 
   def speak(input)
-
-    #Implement your code here <<<<<<<<<
-
+    upper = /[A-Z]+/
+    lower = /[A-Z]?[a-z]+/
+    bye = /\A(BYE ?){3}\z/
+    response = ''
+    if lower.match(input)
+      response = 'SPEAK UP SONNY!'
+    elsif bye.match(input)
+      response = 'SEE YOU LATER SONNY!'
+    elsif upper.match(input)
+      response = 'NOT SINCE 1964!'
+    end
   end
 
   private
