@@ -13,10 +13,10 @@ describe 'DeafGrandma' do
   end
 
   it "EXTRA CREDIT: How would you test yelling BYE?" do
-    script.speak("BYE")
-    script.speak("BYE")
-    expect(script.speak("HI GRANDMA")).to eq "NOT SINCE 1964!"
-    script.speak("BYE")
-    expect(script.speak("HI GRANDMA")).to raise_error SystemExit
+    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
+    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
+    #expect(script.speak("HI GRANDMA")).to eq "NOT SINCE 1964!"
+    #script.speak("BYE")
+    expect{script.speak("BYE")}.to raise_error(SystemExit)
   end
 end
