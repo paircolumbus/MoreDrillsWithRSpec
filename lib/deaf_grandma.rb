@@ -19,17 +19,14 @@ class DeafGrandma
 
 
   def speak(input)
-    #Check for yell
-    if input == "BYE"
-      if @bye_counter < 2
-        @bye_counter += 1
-        "NOT SINCE 1964!"
+    #Check for yel
+
+    if input == input.upcase
+      if input == "BYE"
+          bye_function
       else
-          @bye_counter = 0
-          "SEE YOU LATER SONNY!"
+        "NOT SINCE 1964!"
       end
-    elsif input == input.upcase
-      "NOT SINCE 1964!"
     else
       "SPEAK UP SONNY!"
     end
@@ -38,6 +35,16 @@ class DeafGrandma
   end
 
   private
+
+  def bye_function
+    if @bye_counter < 2
+      @bye_counter += 1
+      ""
+    else
+        @bye_counter = 0
+        "SEE YOU LATER SONNY!"
+    end
+  end
 
   def print_welcome
     puts "\nSpeak to your Grandmother: "
