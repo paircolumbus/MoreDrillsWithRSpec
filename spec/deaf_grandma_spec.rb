@@ -9,10 +9,19 @@ describe 'DeafGrandma' do
   end
   
   it "says 'NOT SINCE 1964!' when we yell" do
-    #implement your test here
+    expect(script.speak("HELLO!")).to eq "NOT SINCE 1964!"
   end
 
-  it "EXTRA CREDIT: How would you test yelling BYE?" do
-    #implement your test here
+  it "says 'SEE YOU LATER SONNY! when we say 3 consecutive 'BYE's" do
+    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
+    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
+    expect(script.speak("BYE")).to eq "SEE YOU LATER SONNY!"
+  end
+
+  it "says 'NOT SINCE 1964! when we say 3 'BYE's nonconsecutively" do
+    script.speak("BYE")
+    script.speak("BYE")
+    script.speak("I guess I'll stay")
+    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
   end
 end

@@ -14,14 +14,26 @@ class DeafGrandma
     loop do
       user_input = get_user_input
       p speak(user_input)
+      exit if @bye_counter == 3
     end
   end
 
 
   def speak(input)
+    if input == input.upcase
+      
+      if input == "BYE"
+        @bye_counter += 1
+      else
+        @bye_counter = 0
+      end
 
-    #Implement your code here <<<<<<<<<
+      @bye_counter == 3 ? byes_response : yell_response
 
+    else
+      @bye_counter = 0
+      soft_speech_response
+    end
   end
 
   private
@@ -33,6 +45,18 @@ class DeafGrandma
   def get_user_input
     print "> "
     gets.chomp
+  end
+
+  def soft_speech_response
+    "SPEAK UP SONNY!"
+  end
+
+  def byes_response
+    "SEE YOU LATER SONNY!"
+  end
+
+  def yell_response
+    "NOT SINCE 1964!"
   end
 
 end

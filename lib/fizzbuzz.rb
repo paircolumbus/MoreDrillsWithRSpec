@@ -2,7 +2,13 @@ class SuperFizzBuzz
 
   def run(input)
 
-    #Implement your code here
+    output = ""
+
+    output << "Fizz" if input % 3 == 0
+    output << "Buzz" if input % 5 == 0
+    output = input if output.empty?
+
+    output
 
   end
 
