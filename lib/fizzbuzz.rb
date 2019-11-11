@@ -2,8 +2,16 @@ class SuperFizzBuzz
 
   def run(input)
 
-    #Implement your code here
-
+    if input % 3 == 0
+        if input % 5 == 0
+            return "FizzBuzz"
+        end
+        return "Fizz"
+    end
+    if input % 5 == 0
+        return "Buzz"
+    end
+    return input
   end
 
 end
