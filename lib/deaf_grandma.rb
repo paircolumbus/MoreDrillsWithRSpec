@@ -4,23 +4,37 @@
 
 class DeafGrandma
 
-  def initialize
-    @bye_counter = 0 
-  end
 
+  def initialize()
+    @bye_counter = 0
+  end
+  
   def run!
     print_welcome
 
     loop do
       user_input = get_user_input
       p speak(user_input)
+      if @bye_counter == 3
+        exit!
+      end
     end
   end
-
-
+  
   def speak(input)
 
-    #Implement your code here <<<<<<<<<
+    if input == "Hi Grandma"
+        return "SPEAK UP SONNY!"
+    end
+    if input == "YELL"
+        return "NOT SINCE 1964!"
+    end
+    if input == "BYE"
+        @bye_counter += 1
+        if @bye_counter == 3
+            return "SEE YOU LATER SONNY!"
+        end
+    end
 
   end
 
