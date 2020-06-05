@@ -14,13 +14,25 @@ class DeafGrandma
     loop do
       user_input = get_user_input
       p speak(user_input)
+      if @bye_counter == 3
+        puts "SEE YOU LATER SONNY!"
+        exit!
+      end
     end
   end
 
 
   def speak(input)
 
-    #Implement your code here <<<<<<<<<
+    if input.downcase == "bye"
+      @bye_counter = @bye_counter+1
+    end
+
+    if input == input.upcase
+      "NOT SINCE 1964!"
+    else
+      "SPEAK UP SONNY!"
+    end
 
   end
 
@@ -38,4 +50,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
+DeafGrandma.new.run!
