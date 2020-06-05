@@ -15,7 +15,6 @@ class DeafGrandma
       user_input = get_user_input
       p speak(user_input)
       if @bye_counter == 3
-        puts "SEE YOU LATER SONNY!"
         exit!
       end
     end
@@ -28,10 +27,12 @@ class DeafGrandma
       @bye_counter = @bye_counter+1
     end
 
-    if input == input.upcase
+    if input == input.upcase && @bye_counter < 3
       "NOT SINCE 1964!"
-    else
+    elsif @bye_counter < 3
       "SPEAK UP SONNY!"
+    else
+      "SEE YOU LATER SONNY!"
     end
 
   end
