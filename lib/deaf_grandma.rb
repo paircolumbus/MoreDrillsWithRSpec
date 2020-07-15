@@ -21,7 +21,16 @@ class DeafGrandma
   def speak(input)
 
     #Implement your code here <<<<<<<<<
-
+    if (input.empty? || input.match(/[a-z]/) )
+      'SPEAK UP SONNY!'
+    else
+      @bye_counter += 1 if input == 'BYE'
+      if @bye_counter == 3
+        p 'SEE YOU LATER SONNY!'
+        exit
+      end
+      'NOT SINCE 1964!'
+    end
   end
 
   private
