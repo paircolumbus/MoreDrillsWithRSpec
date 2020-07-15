@@ -5,7 +5,7 @@
 class DeafGrandma
 
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
   end
 
   def run!
@@ -13,15 +13,35 @@ class DeafGrandma
 
     loop do
       user_input = get_user_input
+      say_goodbye if sonny_said_bye?(user_input) && third_bye?
       p speak(user_input)
     end
   end
 
+  def sonny_said_bye?(input)
+    if input == "BYE"
+      @bye_counter += 1
+      true
+    else
+      false
+    end
+  end
+
+  def third_bye?
+    @bye_counter == 3
+  end
 
   def speak(input)
+    too_quiet?(input) ? "SPEAK UP SONNY!" : "NOT SINCE 1964!"
+  end
 
-    #Implement your code here <<<<<<<<<
+  def too_quiet?(input)
+    input != input.upcase
+  end
 
+  def say_goodbye
+    p "SEE YOU LATER SONNY!"
+    exit
   end
 
   private
@@ -38,4 +58,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
+# DeafGrandma.new.run!
