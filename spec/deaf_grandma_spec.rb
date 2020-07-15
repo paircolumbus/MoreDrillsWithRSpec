@@ -9,10 +9,27 @@ describe 'DeafGrandma' do
   end
   
   it "says 'NOT SINCE 1964!' when we yell" do
-    #implement your test here
+    expect(script.speak("HI GRANDMA")).to eq "NOT SINCE 1964!"
   end
 
-  it "EXTRA CREDIT: How would you test yelling BYE?" do
-    #implement your test here
+  context 'when already yelling BYE twice' do
+    before(:each) { 2.times { script.speak "BYE" } }
+
+    it "EXTRA CREDIT: How would you test yelling BYE?" do
+      expect(script.speak("BYE")).to eq "SEE YOU LATER SONNY!"
+    end
+
+    it "resets after saying SEE YOU LATER SONNY" do
+      script.speak("BYE")
+      expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
+    end
+  end
+
+
+  it "resets the bye counter after not yelling" do
+    script.speak("BYE")
+    script.speak("hi")
+    script.speak("BYE")
+    expect(script.speak("BYE")).to eq "NOT SINCE 1964!"
   end
 end

@@ -1,22 +1,24 @@
 require 'rspec'
 require 'fizzbuzz'
 
+def expect_specific(value)
+  lambda do |test_case|
+    context "when value is #{test_case}" do
+      it "should return '#{value}'" do
+        expect(script.run(test_case)).to eq value
+      end
+    end
+  end
+end
+
 describe 'SuperFizzBuzz' do
   let(:script) { SuperFizzBuzz.new }
 
-  it "returns 'Fizz' when my input is divisible by 3" do
-    expect(script.run(3)).to eq "Fizz"
-  end
-  
-  it "returns 'Buzz' when my input is divisible by 5" do
-    #implement your test here
-  end
+  [ 3, -132, 212].each &expect_specific("Fizz")
+  [ 5, -475, 835].each &expect_specific("Buzz")
+  [15, -135, 135].each &expect_specific("FizzBuzz")
 
-  it "returns 'FizzBuzz' when input is divisible by 3 & 5" do
-    #implement your test here
-  end
-  
   it "returns the input number when input isn't divisible by 3, 5, or both" do
-    #implement your test here
+    expect(script.run(7)).to eq 7
   end
 end

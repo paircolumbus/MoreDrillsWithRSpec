@@ -4,6 +4,10 @@
 
 class DeafGrandma
 
+  RESPONSE_SAY = 'SPEAK UP SONNY!'
+  RESPONSE_YELL = 'NOT SINCE 1964!'
+  RESPONSE_BYE = 'SEE YOU LATER SONNY!'
+
   def initialize
     @bye_counter = 0 
   end
@@ -17,11 +21,22 @@ class DeafGrandma
     end
   end
 
-
+  # @param [String] input
   def speak(input)
+    if input == 'BYE'
+      @bye_counter += 1
+    else
+      @bye_counter = 0
+    end
 
-    #Implement your code here <<<<<<<<<
-
+    if @bye_counter == 3
+      @bye_counter = 0
+      DeafGrandma::RESPONSE_BYE
+    elsif input == input.upcase
+      DeafGrandma::RESPONSE_YELL
+    else
+      DeafGrandma::RESPONSE_SAY
+    end
   end
 
   private
@@ -38,4 +53,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
+# DeafGrandma.new.run!
