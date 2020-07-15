@@ -2,25 +2,35 @@
 
 #CAREFUL! This script will not exit. Do you know why? You may have to close it with `Ctrl-C` (Mac) if you do not insert an `exit` into your speak method.
 
+
 class DeafGrandma
 
+  attr_accessor :bye_counter
+
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
   end
 
   def run!
     print_welcome
 
-    loop do
-      user_input = get_user_input
-      p speak(user_input)
-    end
+     loop do
+       user_input = get_user_input
+       p speak(user_input)
+     end
   end
 
+  def speak(user_input)
 
-  def speak(input)
+    if user_input == "BYE, BYE, BYE"
+      puts "SEE YOU LATER SONNY!"
+    end
 
-    #Implement your code here <<<<<<<<<
+    if user_input == user_input.upcase
+      "NOT SINCE 1964!"
+    else
+      "SPEAK UP SONNY!"
+    end
 
   end
 
@@ -37,5 +47,7 @@ class DeafGrandma
 
 end
 
+
+
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
+DeafGrandma.new.run!
