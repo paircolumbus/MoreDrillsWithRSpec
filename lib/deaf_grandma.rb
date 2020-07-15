@@ -5,7 +5,7 @@
 class DeafGrandma
 
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
   end
 
   def run!
@@ -14,13 +14,25 @@ class DeafGrandma
     loop do
       user_input = get_user_input
       p speak(user_input)
+      break if user_input <=3
     end
   end
 
 
   def speak(input)
 
-    #Implement your code here <<<<<<<<<
+    speak = "Hi Grandma"
+    yell = "HI GRANDMA"
+    bye = "Bye"
+
+    if user_input == speak
+      puts "Speak up Sonny!"
+    elsif user_input == yell
+      puts "Not since 1964!"
+    else user_input == bye(@bye_counter)
+      puts "See you later Sonny!"
+      exit
+    end
 
   end
 
@@ -38,4 +50,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
+DeafGrandma.new.run!
