@@ -21,6 +21,14 @@ class DeafGrandma
   def speak(input)
 
     #Implement your code here <<<<<<<<<
+    case input
+    when "Hi Grandma"
+      "SPEAK UP SONNY!"
+    when "HI GRANDMA"
+      "NOT SINCE 1964!"
+    when "BYE"
+      "GOODBYE SONNY!"
+    end
 
   end
 
