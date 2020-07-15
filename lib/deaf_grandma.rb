@@ -3,9 +3,10 @@
 #CAREFUL! This script will not exit. Do you know why? You may have to close it with `Ctrl-C` (Mac) if you do not insert an `exit` into your speak method.
 
 class DeafGrandma
+  attr_accessor :bye_counter
 
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
   end
 
   def run!
@@ -13,15 +14,34 @@ class DeafGrandma
 
     loop do
       user_input = get_user_input
+      increment_frusteration(user_input)
       p speak(user_input)
+      break if done?
     end
   end
 
 
   def speak(input)
+    return "SEE YOU LATER SONNY!" if done?
+    if grandma_heard_that?(input)
+      "NOT SINCE 1964!"
+    else
+      "SPEAK UP SONNY!"
+    end
+  end
 
-    #Implement your code here <<<<<<<<<
+  def increment_frusteration(input)
+    if input == "BYE"
+      bye_counter += 1
+    end
+  end
 
+  def grandma_heard_that?(input)
+    input.upcase == input
+  end
+
+  def done?
+    bye_counter >= 3
   end
 
   private
@@ -38,4 +58,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
+# DeafGrandma.new.run!
