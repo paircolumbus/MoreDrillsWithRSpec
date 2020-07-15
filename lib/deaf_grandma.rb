@@ -20,8 +20,29 @@ class DeafGrandma
 
   def speak(input)
 
-    #Implement your code here <<<<<<<<<
+    # close the application
+    if input.upcase == "EXIT"
+      exit
+    end
 
+    # if input is UPPERCASE say one thing, if not, say another
+    if input == input.upcase
+
+      # keep track of how many time you've said BYE 
+      if input == "BYE"
+        @bye_counter = @bye_counter + 1
+      end
+
+      # if BYE has been said thrice, exit the application
+      if @bye_counter == 3
+        p "SEE YOU LATER SONNY!"
+        exit
+      end
+
+      return "NOT SINCE 1964!"
+    else # if partially lowercased phrase is said
+      return "SPEAK UP SONNY!"
+    end
   end
 
   private
@@ -38,4 +59,4 @@ class DeafGrandma
 end
 
 #Uncomment this next line to run your script but BE SURE to comment it, before you try and run your tests.
-#DeafGrandma.new.run!
+# DeafGrandma.new.run!
