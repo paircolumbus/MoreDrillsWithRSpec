@@ -1,5 +1,5 @@
 require 'rspec'
-require 'deaf_grandma'
+require '../lib/deaf_grandma'
 
 describe 'DeafGrandma' do
   let(:script) { DeafGrandma.new }
@@ -9,10 +9,10 @@ describe 'DeafGrandma' do
   end
   
   it "says 'NOT SINCE 1964!' when we yell" do
-    #implement your test here
+    expect(script.speak("When did you last hear properly!")).to eq "NOT SINCE 1964!"
   end
 
   it "EXTRA CREDIT: How would you test yelling BYE?" do
-    #implement your test here
+    expect(script.speak("Bye!")).to eq "good bye"
   end
 end

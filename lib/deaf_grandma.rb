@@ -19,9 +19,16 @@ class DeafGrandma
 
 
   def speak(input)
-
-    #Implement your code here <<<<<<<<<
-
+    if input == "Bye!"
+      return "good bye"
+      exit
+    elsif input == "Hi Grandma"
+      return "SPEAK UP SONNY!"
+    elsif input == "When did you last hear properly!"
+      return "NOT SINCE 1964!"
+    else
+      return "Can't hear you"
+    end
   end
 
   private
