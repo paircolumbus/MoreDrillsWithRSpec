@@ -19,9 +19,17 @@ class DeafGrandma
 
 
   def speak(input)
-
-    #Implement your code here <<<<<<<<<
-
+    if is_upper_case(input)
+      if (input == 'BYE')
+        @bye_counter = @bye_counter + 1
+        if @bye_counter == 3
+          exit_program()
+        end
+      end
+      "NOT SINCE 1964!"
+    else
+      "SPEAK UP SONNY!"
+    end
   end
 
   private
@@ -30,9 +38,19 @@ class DeafGrandma
     puts "\nSpeak to your Grandmother: "
   end
 
+  def exit_program
+    p "SEE YOU LATER SONNY!"
+    exit(0)
+  end
+
   def get_user_input
     print "> "
     gets.chomp
+  end
+
+  #From http://stackoverflow.com/a/8529619/1133921
+  def is_upper_case(input)
+    input.match(/\p{Lower}/) == nil
   end
 
 end
