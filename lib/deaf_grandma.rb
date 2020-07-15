@@ -4,14 +4,19 @@
 
 class DeafGrandma
 
+  attr_reader :bye_counter
+
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
   end
 
   def run!
     print_welcome
 
     loop do
+      if should_finish?
+        exit
+      end
       user_input = get_user_input
       p speak(user_input)
     end
@@ -19,12 +24,25 @@ class DeafGrandma
 
 
   def speak(input)
+    if input == 'BYE'
+      @bye_counter = @bye_counter + 1
+      return 'SEE YOU LATER SONNY!' if should_finish?
+    end
 
-    #Implement your code here <<<<<<<<<
+    if input.upcase == input
+      return 'NOT SINCE 1964!'
+    else
+      return 'SPEAK UP SONNY!'
+    end
+
 
   end
 
   private
+
+  def should_finish?
+    @bye_counter >= 3
+  end
 
   def print_welcome
     puts "\nSpeak to your Grandmother: "
