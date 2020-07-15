@@ -1,13 +1,10 @@
+# class to pass fizzbuzz spec
 class SuperFizzBuzz
-
   def run(input)
-
-    #Implement your code here
-
+    output = ''
+    output = input unless (input % 3).zero? || (input % 5).zero?
+    output << 'Fizz' if (input % 3).zero?
+    output << 'Buzz' if (input % 5).zero?
+    output
   end
-
 end
-
-#You don't necessarily need to execute this script to complete this challenge, but how would you "run" this method (pun intended) so that it printed a value to the terminal?
-#
-#HINT: it's an instance method.
