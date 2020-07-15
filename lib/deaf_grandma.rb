@@ -1,4 +1,4 @@
-#This script is different than FizzBuzz. It should accept user input from the terminal if done correctly. Run it to see what it does then complete the speak method so that it returns & prints the correct thing.
+#Thie script is different than FizzBuzz. It should accept user input from the terminal if done correctly. Run it to see what it does then complete the speak method so that it returns & prints the correct thing.
 
 #CAREFUL! This script will not exit. Do you know why? You may have to close it with `Ctrl-C` (Mac) if you do not insert an `exit` into your speak method.
 
@@ -14,13 +14,22 @@ class DeafGrandma
     loop do
       user_input = get_user_input
       p speak(user_input)
+
+      raise StopIteration if @bye_counter == 3
     end
   end
 
 
   def speak(input)
 
-    #Implement your code here <<<<<<<<<
+    case
+    when input == "BYE" 
+      bye_message
+    when input.upcase == input
+      "NOT SINCE 1964!"
+    else 
+      "SPEAK UP SONNY!"
+    end
 
   end
 
@@ -33,6 +42,15 @@ class DeafGrandma
   def get_user_input
     print "> "
     gets.chomp
+  end
+
+  def bye_message
+    @bye_counter += 1
+    if @bye_counter == 3
+      "SEE YOU LATER SONNY!"
+    else
+      ""
+    end
   end
 
 end
