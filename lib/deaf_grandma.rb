@@ -21,6 +21,30 @@ class DeafGrandma
   def speak(input)
 
     #Implement your code here <<<<<<<<<
+    is_all_downcase = -> (s) {
+      s == s.downcase
+    }
+    is_all_upcase = -> (s) {
+      s == s.upcase
+    }
+    bye_search = -> (s) {
+      s.scan(/BYE/).size
+    }
+
+    if is_all_upcase.(input)
+      response = "NOT SINCE 1964!"
+    elsif is_all_downcase.(input)
+      response = "SPEAK UP SONNY!"
+    else
+      response = "SPEAK UP SONNY!"
+    end
+    @bye_counter += bye_search.(input)
+    if @bye_counter >= 3
+      puts "SEE YOU LATER SONNY!"
+      exit
+    end
+    response
+
 
   end
 
