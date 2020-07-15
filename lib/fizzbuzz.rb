@@ -1,9 +1,10 @@
 class SuperFizzBuzz
 
   def run(input)
-
-    #Implement your code here
-
+    result = ""
+    result << "Fizz" if input % 3 == 0
+    result << "Buzz" if input % 5 == 0
+    result
   end
 
 end
