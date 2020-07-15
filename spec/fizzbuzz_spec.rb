@@ -9,14 +9,15 @@ describe 'SuperFizzBuzz' do
   end
   
   it "returns 'Buzz' when my input is divisible by 5" do
-    #implement your test here
+    expect(script.run(5)).to eq "Buzz"
   end
 
   it "returns 'FizzBuzz' when input is divisible by 3 & 5" do
-    #implement your test here
+    expect(script.run(15)).to eq "FizzBuzz"
+    expect(script.run(0)).to eq "FizzBuzz"  # 0 is divisible by all numbers.
   end
   
   it "returns the input number when input isn't divisible by 3, 5, or both" do
-    #implement your test here
+    expect(script.run(2)).to eq 2
   end
 end
