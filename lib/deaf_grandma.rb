@@ -20,11 +20,33 @@ class DeafGrandma
 
   def speak(input)
 
-    #Implement your code here <<<<<<<<<
-
+    if is_yelling(input)
+        "NOT SINCE 1964!"
+    else
+        "SPEAK UP SONNY!"
+    end
   end
 
   private
+
+    def is_yelling(text)
+        return false if text != text.upcase
+
+        if text == "BYE"
+            @bye_counter += 1
+        end
+
+        if @bye_counter == 3
+            say_goodbye
+        end
+
+        return true
+    end
+
+    def say_goodbye
+        print "SEE YOU LATER SONNY!"
+        exit
+    end
 
   def print_welcome
     puts "\nSpeak to your Grandmother: "
