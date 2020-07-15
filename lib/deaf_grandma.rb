@@ -12,16 +12,26 @@ class DeafGrandma
     print_welcome
 
     loop do
-      user_input = get_user_input
-      p speak(user_input)
+       user_input = get_user_input
+       p speak(user_input)
+      if @bye_counter == 3
+        break
+      end
     end
   end
 
 
   def speak(input)
-
-    #Implement your code here <<<<<<<<<
-
+      if "BYE" === input #is the word BYE? 
+        @bye_counter += 1
+        if @bye_counter == 3
+          "SEE YOU LATER SONNY!"
+        end
+      elsif input.upcase == input #The word is not bye but we are yelling
+        "NOT SINCE 1964!"
+      else #not yelling and not the word bye
+        "SPEAK UP SONNY!"
+      end
   end
 
   private
