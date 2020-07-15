@@ -5,13 +5,13 @@
 class DeafGrandma
 
   def initialize
-    @bye_counter = 0 
+    @bye_counter = 0
   end
 
   def run!
     print_welcome
-
-    loop do
+    user_input = nil
+    until user_input == "BYE"
       user_input = get_user_input
       p speak(user_input)
     end
@@ -19,9 +19,11 @@ class DeafGrandma
 
 
   def speak(input)
-
-    #Implement your code here <<<<<<<<<
-
+    case
+    when input == "BYE" then "SURPRISE I'M A ROBOT"
+    when input == input.upcase then "NOT SINCE 1964!" # All caps; user is yelling!
+    else "SPEAK UP SONNY!" # Normal speech
+    end
   end
 
   private
